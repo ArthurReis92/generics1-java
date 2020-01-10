@@ -7,21 +7,20 @@ import example1.model.entities.PrintService;
 public class Program {
 
 	public static void main(String[] args) {
-		//Solving the problem using Object -> the problem is type safety and performace because of the casting
 		
 		Scanner sc = new Scanner(System.in);
-		PrintService ps = new PrintService();
+		PrintService<String> ps = new PrintService<>();
 		
 		System.out.print("How many values? ");
 		int n = sc.nextInt();
 		
 		for (int i = 0; i < n; i++) {
-			Integer value = sc.nextInt();
+			String value = sc.next();
 			ps.addValue(value);
 		}
 		
 		ps.print();
-		Integer x = (Integer) ps.first();
+		String x = ps.first();
 		System.out.println("First: " + x);
 		
 		sc.close();
