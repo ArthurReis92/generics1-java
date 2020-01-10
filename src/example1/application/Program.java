@@ -7,6 +7,8 @@ import example1.model.entities.PrintService;
 public class Program {
 
 	public static void main(String[] args) {
+		//Solving the problem using Object -> the problem is type safety and performace because of the casting
+		
 		Scanner sc = new Scanner(System.in);
 		PrintService ps = new PrintService();
 		
@@ -14,12 +16,13 @@ public class Program {
 		int n = sc.nextInt();
 		
 		for (int i = 0; i < n; i++) {
-			int value = sc.nextInt();
+			Integer value = sc.nextInt();
 			ps.addValue(value);
 		}
 		
 		ps.print();
-		System.out.println("First: " + ps.first());
+		Integer x = (Integer) ps.first();
+		System.out.println("First: " + x);
 		
 		sc.close();
 	}
